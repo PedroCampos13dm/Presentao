@@ -10,8 +10,7 @@ function irPara(id) {
         tela.classList.remove("ativa");
     });
 
-    const proximaTela =
-        document.getElementById(id);
+    const proximaTela = document.getElementById(id);
 
     proximaTela.classList.add("ativa");
 
@@ -32,10 +31,8 @@ function verificarPergunta1() {
             .trim()
             .toLowerCase();
 
-
     const mensagem =
         document.getElementById("mensagem1");
-
 
     const continuar =
         document.getElementById("continuar1");
@@ -46,10 +43,8 @@ function verificarPergunta1() {
         mensagem.textContent =
             "Se você diz... Não vou negar. Obrigado!";
 
-
         mensagem.className =
             "mensagem acerto";
-
 
         continuar.style.display =
             "inline-block";
@@ -59,10 +54,8 @@ function verificarPergunta1() {
         mensagem.textContent =
             "Deixe de ser burra, é tão fácil!";
 
-
         mensagem.className =
             "mensagem erro";
-
 
         continuar.style.display =
             "none";
@@ -81,10 +74,8 @@ function verificarPergunta2() {
             .getElementById("resposta2")
             .value;
 
-
     const mensagem =
         document.getElementById("mensagem2");
-
 
     const continuar =
         document.getElementById("continuar2");
@@ -95,10 +86,8 @@ function verificarPergunta2() {
         mensagem.textContent =
             "CORRETO!";
 
-
         mensagem.className =
             "mensagem acerto";
-
 
         continuar.style.display =
             "inline-block";
@@ -108,10 +97,8 @@ function verificarPergunta2() {
         mensagem.textContent =
             "ERRADO";
 
-
         mensagem.className =
             "mensagem erro";
-
 
         continuar.style.display =
             "none";
@@ -132,7 +119,6 @@ function verificarPergunta3() {
             .trim()
             .toLowerCase();
 
-
     const mensagem =
         document.getElementById("mensagem3");
 
@@ -145,7 +131,6 @@ function verificarPergunta3() {
 
         mensagem.textContent =
             "ERRADO";
-
 
         mensagem.className =
             "mensagem erro";
