@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Um presente especial</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- TELA 1: INÍCIO -->
+    <section id="tela1" class="tela ativa">
+
+        <h1>Você recebeu um presente especial.</h1>
+
+        <img src="Presente.png" alt="Presente" class="imagem-presente">
+
+        <p>Deseja abrir?</p>
+
+        <button onclick="irPara('tela2')">
+            ABRIR
+        </button>
+
+    </section>
+
+
+    <!-- TELA 2: PERGUNTA 1 -->
+    <section id="tela2" class="tela">
+
+        <h2>
+            1. Qual é o primeiro nome da pessoa mais gente boa do mundo?
+        </h2>
+
+        <input
+            type="text"
+            id="resposta1"
+            placeholder="Digite sua resposta"
+            autocomplete="off"
+        >
+
+        <div id="mensagem1" class="mensagem"></div>
+
+        <button onclick="verificarPergunta1()">
+            RESPONDER
+        </button>
+
+        <button
+            id="continuar1"
+            class="botao-verde"
+            style="display: none;"
+            onclick="irPara('tela3')"
+        >
+            CONTINUAR
+        </button>
+
+    </section>
+
+
+    <!-- TELA 3: INTRODUÇÃO -->
+    <section id="tela3" class="tela">
+
+        <p>
+            Se você diz... Não vou negar. Obrigado!
+        </p>
+
+        <p>
+            Bem, agora vai começar a ficar sério.
+        </p>
+
+        <p>
+            Achou que eu simplesmente iria lhe dar um presente de graça?
+        </p>
+
+        <button onclick="irPara('tela4')">
+            CONTINUAR
+        </button>
+
+    </section>
+
+
+    <!-- TELA 4: PERGUNTA 2 -->
+    <section id="tela4" class="tela">
+
+        <h2>
+            2. Quantos anos Jesus tinha quando foi crucificado?
+        </h2>
+
+        <input
+            type="number"
+            id="resposta2"
+            placeholder="Digite a idade"
+        >
+
+        <div id="mensagem2" class="mensagem"></div>
+
+        <button onclick="verificarPergunta2()">
+            RESPONDER
+        </button>
+
+        <button
+            id="continuar2"
+            class="botao-verde"
+            style="display: none;"
+            onclick="irPara('tela5')"
+        >
+            PRÓXIMA PERGUNTA
+        </button>
+
+    </section>
+
+
+    <!-- TELA 5: PERGUNTA 3 -->
+    <section id="tela5" class="tela">
+
+        <h2>
+            3. Qual é o nome do fim do mundo em que você mora?
+        </h2>
+
+        <input
+            type="text"
+            id="resposta3"
+            placeholder="Digite sua resposta"
+            autocomplete="off"
+        >
+
+        <div id="mensagem3" class="mensagem"></div>
+
+        <button onclick="verificarPergunta3()">
+            RESPONDER
+        </button>
+
+    </section>
+
+
+    <!-- TELA 6: DECISÃO -->
+    <section id="tela6" class="tela">
+
+        <p>
+            Por que falar assim da sua cidade?
+            Uma cidade maravilhosa.
+        </p>
+
+        <p>
+            Brincadeiras à parte... Está pronta para o seu presente?
+        </p>
+
+        <div>
+
+            <button
+                class="botao-verde"
+                onclick="irPara('tela7')"
+            >
+                SIM
+            </button>
+
+            <button
+                class="botao-nao"
+                onclick="irPara('tela8')"
+            >
+                NÃO
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- TELA 7: MOMENTO DO PRESENTE -->
+    <section id="tela7" class="tela">
+
+        <h1>
+            CHEGOU O MOMENTO TÃO ESPERADO!
+        </h1>
+
+        <p>
+            Clique no botão e desfrute do seu presente.
+        </p>
+
+        <img
+            src="Presente.png"
+            alt="Presente"
+            class="imagem-presente"
+        >
+
+        <button onclick="abrirPresente()">
+            ABRIR MEU PRESENTE
+        </button>
+
+    </section>
+
+
+    <!-- TELA 8: BOTÃO NÃO -->
+    <section id="tela8" class="tela">
+
+        <h2>
+            Este botão estará aqui caso você queira abrir o presente.
+        </h2>
+
+        <p>
+            É só clicar no botão abaixo.
+        </p>
+
+        <button onclick="irPara('tela7')">
+            ABRIR PRESENTE
+        </button>
+
+    </section>
+
+
+    <!-- TELA 9: PRESENTE ABERTO -->
+    <section id="tela9" class="tela">
+
+        <img
+            src="Pastel.png"
+            alt="Pastel"
+            class="imagem-pastel"
+        >
+
+        <h1>
+            Está aí o pastel que eu te devia.
+        </h1>
+
+        <p>
+            Aproveite!
+        </p>
+
+    </section>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
