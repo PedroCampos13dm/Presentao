@@ -24,18 +24,12 @@ function irPara(id) {
 
 function verificarPergunta1() {
 
-    const resposta =
-        document
-            .getElementById("resposta1")
-            .value
-            .trim()
-            .toLowerCase();
+    const campo = document.getElementById("resposta1");
+    const mensagem = document.getElementById("mensagem1");
+    const responder = document.getElementById("responder1");
+    const continuar = document.getElementById("continuar1");
 
-    const mensagem =
-        document.getElementById("mensagem1");
-
-    const continuar =
-        document.getElementById("continuar1");
+    const resposta = campo.value.trim().toLowerCase();
 
 
     if (resposta === "pedro") {
@@ -46,19 +40,32 @@ function verificarPergunta1() {
         mensagem.className =
             "mensagem acerto";
 
-        continuar.style.display =
-            "inline-block";
+        // Esconde o botão RESPONDER
+        responder.style.display = "none";
+
+        // Mostra o botão CONTINUAR
+        continuar.style.display = "inline-block";
 
     } else {
 
         mensagem.textContent =
-            "Deixe de ser burra, é tão fácil!";
+            "ERRADO";
 
         mensagem.className =
             "mensagem erro";
 
-        continuar.style.display =
-            "none";
+        // Apaga a resposta depois de um pequeno intervalo
+        setTimeout(() => {
+
+            campo.value = "";
+
+            mensagem.textContent = "";
+
+            mensagem.className = "mensagem";
+
+            campo.focus();
+
+        }, 800);
     }
 }
 
@@ -69,16 +76,12 @@ function verificarPergunta1() {
 
 function verificarPergunta2() {
 
-    const resposta =
-        document
-            .getElementById("resposta2")
-            .value;
+    const campo = document.getElementById("resposta2");
+    const mensagem = document.getElementById("mensagem2");
+    const responder = document.getElementById("responder2");
+    const continuar = document.getElementById("continuar2");
 
-    const mensagem =
-        document.getElementById("mensagem2");
-
-    const continuar =
-        document.getElementById("continuar2");
+    const resposta = campo.value.trim();
 
 
     if (resposta === "33") {
@@ -89,8 +92,11 @@ function verificarPergunta2() {
         mensagem.className =
             "mensagem acerto";
 
-        continuar.style.display =
-            "inline-block";
+        // Esconde o botão RESPONDER
+        responder.style.display = "none";
+
+        // Mostra o botão PRÓXIMA PERGUNTA
+        continuar.style.display = "inline-block";
 
     } else {
 
@@ -100,8 +106,18 @@ function verificarPergunta2() {
         mensagem.className =
             "mensagem erro";
 
-        continuar.style.display =
-            "none";
+        // Apaga a resposta depois de um pequeno intervalo
+        setTimeout(() => {
+
+            campo.value = "";
+
+            mensagem.textContent = "";
+
+            mensagem.className = "mensagem";
+
+            campo.focus();
+
+        }, 800);
     }
 }
 
@@ -112,19 +128,16 @@ function verificarPergunta2() {
 
 function verificarPergunta3() {
 
-    const resposta =
-        document
-            .getElementById("resposta3")
-            .value
-            .trim()
-            .toLowerCase();
+    const campo = document.getElementById("resposta3");
+    const mensagem = document.getElementById("mensagem3");
 
-    const mensagem =
-        document.getElementById("mensagem3");
+    const resposta =
+        campo.value.trim().toLowerCase();
 
 
     if (resposta === "abreus") {
 
+        // Vai diretamente para a próxima tela
         irPara("tela6");
 
     } else {
@@ -134,6 +147,19 @@ function verificarPergunta3() {
 
         mensagem.className =
             "mensagem erro";
+
+        // Apaga a resposta depois de um pequeno intervalo
+        setTimeout(() => {
+
+            campo.value = "";
+
+            mensagem.textContent = "";
+
+            mensagem.className = "mensagem";
+
+            campo.focus();
+
+        }, 800);
     }
 }
 
