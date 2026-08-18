@@ -12,7 +12,9 @@ function irPara(id) {
 
     const proximaTela = document.getElementById(id);
 
-    proximaTela.classList.add("ativa");
+    if (proximaTela) {
+        proximaTela.classList.add("ativa");
+    }
 
     window.scrollTo(0, 0);
 }
@@ -31,7 +33,6 @@ function verificarPergunta1() {
 
     const resposta = campo.value.trim().toLowerCase();
 
-
     if (resposta === "pedro") {
 
         mensagem.textContent =
@@ -40,27 +41,21 @@ function verificarPergunta1() {
         mensagem.className =
             "mensagem acerto";
 
-        // Esconde o botão RESPONDER
-        responder.style.display = "none";
+        /* Remove completamente o botão RESPONDER */
+        responder.remove();
 
-        // Mostra o botão CONTINUAR
+        /* Mostra CONTINUAR */
         continuar.style.display = "inline-block";
 
     } else {
 
-        mensagem.textContent =
-            "ERRADO";
+        mensagem.textContent = "ERRADO";
+        mensagem.className = "mensagem erro";
 
-        mensagem.className =
-            "mensagem erro";
-
-        // Apaga a resposta depois de um pequeno intervalo
         setTimeout(() => {
 
             campo.value = "";
-
             mensagem.textContent = "";
-
             mensagem.className = "mensagem";
 
             campo.focus();
@@ -83,7 +78,6 @@ function verificarPergunta2() {
 
     const resposta = campo.value.trim();
 
-
     if (resposta === "33") {
 
         mensagem.textContent =
@@ -92,27 +86,21 @@ function verificarPergunta2() {
         mensagem.className =
             "mensagem acerto";
 
-        // Esconde o botão RESPONDER
-        responder.style.display = "none";
+        /* Remove completamente o botão RESPONDER */
+        responder.remove();
 
-        // Mostra o botão PRÓXIMA PERGUNTA
+        /* Mostra PRÓXIMA PERGUNTA */
         continuar.style.display = "inline-block";
 
     } else {
 
-        mensagem.textContent =
-            "ERRADO";
+        mensagem.textContent = "ERRADO";
+        mensagem.className = "mensagem erro";
 
-        mensagem.className =
-            "mensagem erro";
-
-        // Apaga a resposta depois de um pequeno intervalo
         setTimeout(() => {
 
             campo.value = "";
-
             mensagem.textContent = "";
-
             mensagem.className = "mensagem";
 
             campo.focus();
@@ -134,27 +122,19 @@ function verificarPergunta3() {
     const resposta =
         campo.value.trim().toLowerCase();
 
-
     if (resposta === "abreus") {
 
-        // Vai diretamente para a próxima tela
         irPara("tela6");
 
     } else {
 
-        mensagem.textContent =
-            "ERRADO";
+        mensagem.textContent = "ERRADO";
+        mensagem.className = "mensagem erro";
 
-        mensagem.className =
-            "mensagem erro";
-
-        // Apaga a resposta depois de um pequeno intervalo
         setTimeout(() => {
 
             campo.value = "";
-
             mensagem.textContent = "";
-
             mensagem.className = "mensagem";
 
             campo.focus();
